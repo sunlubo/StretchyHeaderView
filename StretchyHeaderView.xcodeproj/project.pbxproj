@@ -64,14 +64,14 @@
 			isa = PBXGroup;
 			children = (
 				A44270B11D5044FD007B5A80 /* AppDelegate.swift */,
+				A44270BD1D5044FD007B5A80 /* ViewController.swift */,
+				A44270BA1D5044FD007B5A80 /* DetailViewController.swift */,
 				A44270B21D5044FD007B5A80 /* Assets.xcassets */,
 				A44270B31D5044FD007B5A80 /* LaunchScreen.storyboard */,
 				A44270B51D5044FD007B5A80 /* Main.storyboard */,
 				A44270B71D5044FD007B5A80 /* Classes */,
-				A44270BA1D5044FD007B5A80 /* DetailViewController.swift */,
 				A44270BB1D5044FD007B5A80 /* FullSizeRender.jpg */,
 				A44270BC1D5044FD007B5A80 /* Info.plist */,
-				A44270BD1D5044FD007B5A80 /* ViewController.swift */,
 			);
 			path = StretchyHeaderView;
 			sourceTree = "<group>";
