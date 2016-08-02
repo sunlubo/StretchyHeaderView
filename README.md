@@ -1,7 +1,7 @@
 # StretchyHeaderView
-A generic stretchy header for UITableView and UICollectionView.
+A generic stretchy header for UIScrollView, and allows you to change navigation bar's appearance dynamically.
 
-![LTNavigationbar](https://raw.githubusercontent.com/ltebean/LTNavigationBar/master/images/demo.gif)
+![StretchyHeaderView](screenshots/snapshot.gif)
 
 Installation
 ------------
