@@ -25,7 +25,7 @@ public extension UINavigationBar {
         static var kBarColor = "barColor"
     }
 
-    var barColor: UIColor? {
+    public var barColor: UIColor? {
         set {
             objc_setAssociatedObject(self, &AssociatedKeys.kBarColor, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
@@ -50,7 +50,7 @@ public extension UINavigationBar {
         setBackgroundImage(image(with: CGRectMake(0, 0, 1, 1), color: color.colorWithAlphaComponent(alpha)), forBarMetrics: .Default)
     }
 
-    func attachToScrollView(scrollView: UIScrollView) {
+    public func attachToScrollView(scrollView: UIScrollView) {
         self.scrollView = scrollView
         self.shadowImage = UIImage()
         self.tintColor = UIColor.whiteColor()
@@ -58,7 +58,7 @@ public extension UINavigationBar {
         scrollView.addObserver(self, forKeyPath: kContentOffset, options: .New, context: nil)
     }
 
-    func reset() {
+    public func reset() {
         self.scrollView?.removeObserver(self, forKeyPath: kContentOffset)
         self.scrollView = nil
         self.shadowImage = nil

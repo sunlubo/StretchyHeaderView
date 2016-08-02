@@ -14,14 +14,14 @@ let kContentOffset = "contentOffset"
 
 // MARK: - Scalable Cover
 public class ScalableCover: UIImageView {
-    var maxHeight: CGFloat!
-    var scrollView: UIScrollView! {
+    private var maxHeight: CGFloat!
+    private var scrollView: UIScrollView! {
         didSet {
             scrollView.addObserver(self, forKeyPath: kContentOffset, options: .New, context: nil)
         }
     }
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentMode = .ScaleAspectFill
         self.clipsToBounds = true
@@ -67,7 +67,7 @@ public extension UIScrollView {
         }
     }
 
-    func addScalableCover(with image: UIImage, maxHeight: CGFloat = 200) {
+    public func addScalableCover(with image: UIImage, maxHeight: CGFloat = 200) {
         let cover = ScalableCover(frame: CGRectMake(0, 0, self.bounds.size.width, maxHeight))
         cover.backgroundColor = UIColor.clearColor()
         cover.image = image
@@ -81,7 +81,7 @@ public extension UIScrollView {
         self.contentInset = UIEdgeInsetsMake(maxHeight, 0, 0, 0)
     }
 
-    func removeScalableCover() {
+    public func removeScalableCover() {
         scalableCover?.removeFromSuperview()
         scalableCover = nil
     }
