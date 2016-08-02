@@ -1,5 +1,4 @@
 # StretchyHeaderView
-A generic stretchy header for UIScrollView, and allows you to change navigation bar's appearance dynamically.
 
 ![StretchyHeaderView](screenshots/snapshot.gif)
 
