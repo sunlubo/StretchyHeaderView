@@ -13,17 +13,17 @@ import ObjectiveC
 let kContentOffset = "contentOffset"
 
 // MARK: - Scalable Cover
-public class ScalableCover: UIImageView {
-    private var maxHeight: CGFloat!
-    private var scrollView: UIScrollView! {
+open class ScalableCover: UIImageView {
+    fileprivate var maxHeight: CGFloat!
+    fileprivate var scrollView: UIScrollView! {
         didSet {
-            scrollView.addObserver(self, forKeyPath: kContentOffset, options: .New, context: nil)
+            scrollView.addObserver(self, forKeyPath: kContentOffset, options: .new, context: nil)
         }
     }
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.contentMode = .ScaleAspectFill
+        self.contentMode = .scaleAspectFill
         self.clipsToBounds = true
     }
 
@@ -31,29 +31,30 @@ public class ScalableCover: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public override func removeFromSuperview() {
+    open override func removeFromSuperview() {
         scrollView.removeObserver(self, forKeyPath: kContentOffset)
         super.removeFromSuperview()
     }
 
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
 
         if scrollView.contentOffset.y < 0 {
             let offset = -scrollView.contentOffset.y
-            self.frame = CGRectMake(-offset, -offset, scrollView.bounds.size.width + offset * 2, maxHeight + offset)
+            self.frame = CGRect(x: -offset, y: -offset, width: scrollView.bounds.size.width + offset * 2, height: maxHeight + offset)
         } else {
-            self.frame = CGRectMake(0, 0, scrollView.bounds.size.width, maxHeight)
+            self.frame = CGRect(x: 0, y: 0, width: scrollView.bounds.size.width, height: maxHeight)
         }
     }
 
-    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String: AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    open override func observeValue(forKeyPath _: String?, of _: Any?, change _: [NSKeyValueChangeKey: Any]?, context _: UnsafeMutableRawPointer?) {
         setNeedsLayout()
     }
 }
 
 // MARK: - UIScrollView Extension
-public extension UIScrollView {
+extension UIScrollView {
+
     private struct AssociatedKeys {
         static var kScalableCover = "scalableCover"
     }
@@ -68,14 +69,14 @@ public extension UIScrollView {
     }
 
     public func addScalableCover(with image: UIImage, maxHeight: CGFloat = 200) {
-        let cover = ScalableCover(frame: CGRectMake(0, 0, self.bounds.size.width, maxHeight))
-        cover.backgroundColor = UIColor.clearColor()
+        let cover = ScalableCover(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: maxHeight))
+        cover.backgroundColor = UIColor.clear
         cover.image = image
         cover.maxHeight = maxHeight
         cover.scrollView = self
 
         addSubview(cover)
-        sendSubviewToBack(cover)
+        sendSubview(toBack: cover)
 
         self.scalableCover = cover
         self.contentInset = UIEdgeInsetsMake(maxHeight, 0, 0, 0)

@@ -15,7 +15,6 @@
 		A44270C31D5044FD007B5A80 /* UIScrollView+ScalableCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44270B91D5044FD007B5A80 /* UIScrollView+ScalableCover.swift */; };
 		A44270C41D5044FD007B5A80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44270BA1D5044FD007B5A80 /* DetailViewController.swift */; };
 		A44270C51D5044FD007B5A80 /* FullSizeRender.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A44270BB1D5044FD007B5A80 /* FullSizeRender.jpg */; };
-		A44270C61D5044FD007B5A80 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A44270BC1D5044FD007B5A80 /* Info.plist */; };
 		A44270C71D5044FD007B5A80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44270BD1D5044FD007B5A80 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,11 +111,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = sunlubo;
 				TargetAttributes = {
 					A40171741D4EF2C1009D4710 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9Y4KSPGWRT;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -144,7 +145,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A44270C11D5044FD007B5A80 /* Main.storyboard in Resources */,
-				A44270C61D5044FD007B5A80 /* Info.plist in Resources */,
 				A44270C01D5044FD007B5A80 /* LaunchScreen.storyboard in Resources */,
 				A44270BF1D5044FD007B5A80 /* Assets.xcassets in Resources */,
 				A44270C51D5044FD007B5A80 /* FullSizeRender.jpg in Resources */,
@@ -202,8 +202,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -247,8 +249,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -267,6 +271,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -275,10 +280,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9Y4KSPGWRT;
 				INFOPLIST_FILE = StretchyHeaderView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunlubo.StretchyNavigationBar;
 				PRODUCT_NAME = StretchyHeaderView;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -286,10 +293,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9Y4KSPGWRT;
 				INFOPLIST_FILE = StretchyHeaderView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunlubo.StretchyNavigationBar;
 				PRODUCT_NAME = StretchyHeaderView;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
