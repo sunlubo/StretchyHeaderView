@@ -17,19 +17,19 @@ class ViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
 
         let navigationBar = navigationController!.navigationBar
-        navigationBar.barColor = UIColor(colorLiteralRed: 52 / 255, green: 152 / 255, blue: 219 / 255, alpha: 1)
+        navigationBar.barColor = UIColor(red: 52 / 255, green: 152 / 255, blue: 219 / 255, alpha: 1)
 
         tableView.addScalableCover(with: UIImage(named: "FullSizeRender.jpg")!)
         tableView.showsVerticalScrollIndicator = false
         tableView.tableFooterView = UIView()
     }
 
-    func add() {
+    @objc func add() {
         let detailVC = DetailViewController()
         navigationController!.pushViewController(detailVC, animated: true)
     }
 
-    func done() {
+    @objc func done() {
         print(#function)
     }
 
